@@ -104,6 +104,13 @@ class TestChampion(unittest.TestCase):
 
         self.assertEqual(champion["name"], "Iorniem United")
         self.assertEqual(champion["points"], 9)
+        
+    def test_no_mathematical_champion_when_no_fixtures_exist(self): 
+     
+      champion = get_mathematical_champion(self.teams, [])
+
+      self.assertIsNone(champion)
+
 
 if __name__ == "__main__":
     unittest.main()
